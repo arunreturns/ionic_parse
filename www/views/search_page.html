@@ -1,0 +1,43 @@
+<ion-view title="Search">
+	<ion-content>
+		<div class="card">
+  			<div class="item item-text-wrap">
+  				Search Page
+  			</div>
+		</div>
+		<form class="list list-inset" name="searchForm">
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" ng-model="input.inputName" name="inputName" placeholder="Search using first and last name" ng-required="true">
+			</label>
+
+			<div class="button-bar">
+				<button class="button button-block button-light" ng-click="getUserData()" ng-disabled="!searchForm.$valid">Search</button>
+				<button class="button button-block button-assertive" ng-click="resetData()" ng-disabled="!searchForm.$valid">Reset</button>
+			</div>
+		</form>
+
+		<div class="list card" ng-if='data'>
+			<div class="item item-divider">
+  				User Details
+			</div>
+			<div class="item item-text-wrap">
+				<b>Name</b> : {{ data.firstName }} {{ data.lastName }}
+			</div>
+			<div class="item item-text-wrap">
+				<b>Phone</b> : {{ data.phoneNumber }}
+			</div>
+			<div class="item item-text-wrap">
+				<b>Amount</b> : {{ data.amount }}
+			</div>
+			<div class="item item-text-wrap">
+				<b>Address</b> : {{ data.address }}
+			</div>
+			<div class="item item-text-wrap">
+				<b>Payment Date</b> : {{ data.paymentDate.iso | date : 'dd/MM/yyyy' }}
+			</div>
+
+		</div>
+
+	</ion-content>
+</ion-view>

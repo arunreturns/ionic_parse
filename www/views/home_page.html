@@ -1,0 +1,53 @@
+<ion-view title="Entry Page">
+	<ion-content>
+		<div class="card">
+  			<div class="item item-text-wrap">
+  				Entry Page
+  			</div>
+		</div>
+		<form class="list list-inset" name="entryForm" novalidate>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">First Name</span>
+				<input type="text" placeholder="Enter your First Name" ng-model="entry.firstName" name="firstName" ng-required="true">	
+  			</label>
+
+  			<label class="item item-input item-floating-label">
+				<span class="input-label">Last Name</span>
+				<input type="text" placeholder="Enter your Last Name" ng-model="entry.lastName" name="lastName" ng-required="true">	
+  			</label>
+
+  			<label class="item item-input item-floating-label">
+				<span class="input-label">Number</span>
+				<input type="number" placeholder="Enter the User Number" ng-model="entry.number" name="number" ng-required="true">	
+  			</label>
+
+  			<label class="item item-input item-floating-label">
+				<span class="input-label">Amount</span>
+				<input type="number" placeholder="Enter the Amount" ng-model="entry.amount" name="amount" ng-required="true">	
+  			</label>
+
+  			<label class="item item-input item-floating-label">
+				<span class="input-label">Payment Date</span>
+				<input type="date" placeholder="Enter the Payment Date" ng-model="entry.paymentDate" name="paymentDate" 
+					min="{{ minDate | date:'yyyy-MM-dd' }}" ng-required="true">	
+  			</label>
+
+  			<label class="item item-input item-floating-label">
+				<span class="input-label">Address</span>
+				<textarea type="text" placeholder="Enter Address" ng-model="entry.address" name="address" ng-required="true"></textarea>
+  			</label>
+
+  			<label class="item item-input item-floating-label">
+				<span class="input-label">Phone Number</span>
+				<input type="number" placeholder="Enter the User Phone Number" ng-model="entry.phoneNumber" name="phoneNumber" 
+					ng-minlength=10 maxlength=10 ng-required="true">	
+  			</label>
+  			<div class="padding">
+				<button class="button button-block button-balanced" ng-click="submitForm()" ng-disabled="!entryForm.$valid">Save</button>
+
+				<button class="button button-block button-assertive" ng-click="resetForm()">Reset</button>
+			</div>
+
+  		</form>
+	</ion-content>
+</ion-view>
